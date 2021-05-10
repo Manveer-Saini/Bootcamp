@@ -27,8 +27,9 @@
     display: inline-block;
     vertical-align: top;
     padding: 20px;
+    padding-right: 10px;
     margin-top: 15px;
-    margin-left: 6px;
+    margin-left: 16px;
    }
    .subcontents{
     min-height: 200px;
