@@ -1,0 +1,15 @@
+.center-box{
+    width: 900px;
+    height: 250px;
+    background-color: darkblue;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3px;
+  }
+  .center-item{
+    min-height: 50px;
+    width: 50px;
+    background-color: rgb(231, 218, 201);
+  }
