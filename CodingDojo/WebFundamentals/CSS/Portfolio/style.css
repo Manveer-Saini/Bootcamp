@@ -1,0 +1,151 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#header{
+    width: 855px;
+    height: 40px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.wrapper {
+    width: 815px;
+    height: 683px;
+    background-color: #4a373f;
+    padding: 20px;
+}
+.about-container {
+    width: 815px;
+    height: 283px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#about {
+    width: 434px;
+    height: 263px;
+    background-color: #ebe3ea;
+}
+.content-container {
+    width: 814px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-box {
+    width: 258px;
+    height: 400px;
+    background-color: #ebe3ea;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#my-photo {
+    width: 346px;
+    height: 255px;
+    border-style: outset;
+    border-width: 4px;
+}
+
+
+h4 {
+    color: white;
+    background-color: #878593;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#about-p {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+#about-link {
+    padding-left: 10px;
+    color: black;
+    text-decoration-thickness: 1px;
+
+}
+#content-img {
+    width: 258px;
+    height: 100px;
+}
+
+#la-mode-p {
+    font-size: 9pt;
+    margin-bottom: 42px;
+    padding-left: 6px;
+}
+
+#family-p {
+    font-size: 9pt;
+    margin-bottom: 28px;
+    padding-left: 4px;
+}
+
+#fiveE-p {
+    font-size: 9pt;
+    padding-left: 3px;
+}
+
+h5 {
+    color: white;
+    background-color: #878593;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 258px;
+    height: 100px;
+}
+
+.tech-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#proj-link-text {
+    width: 30px;
+    height: 5px;
+    background-color: #407d61;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    margin-left: 80px;
+    padding: 2px;
+}
+
+#footer {
+    width: 855px;
+    height: 25px;
+    padding: 5px;
+}
+
+.social-icon{
+    width: 10px;
+    height: 10px;
+}
+
+.social-link{
+    color: black;
+    font-size: 9pt;
+}
+
+#social-media {
+    margin-left: 309px;
+}
+
+#email-number {
+    margin-left: 354px;
+    font-size: 8pt;
+}
