@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapper {
+    border: solid black 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1150px;
+    height: 580px;
+}
+
+h3 {
+    margin: 15px;
+}
+
+#restore {
+    background-color: #06a000;
+    color: white;
+    font-size: x-large;
+    margin: 0px;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+}
