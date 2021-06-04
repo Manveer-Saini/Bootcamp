@@ -1,0 +1,42 @@
+pip install Django==1.11.9
+
+Explanation: So this command above basically installs a package with the pip package manager.
+In particular it installs the package Django with version 1.11.9 .
+
+pip list
+
+Explanation: So this command above lists the python packages installed on the current working
+environment with the pip package manager.
+
+deactivate
+
+Explanation: So this command above deactivates the virtual environment being used.
+
+pip3 list
+
+Explanation: So this command above lists the packages installed on the local system
+specifying python 3's pip package manager. 
+
+source pyEnv/bin/activate
+
+Explanation: So this command above allows us to activate the virtual environment 
+pyEnv in our case.
+
+pip install Django==1.11.9
+
+Explanation: Well as the command has already been executed above within this 
+environment pip tells us that this version of Django has already been installed.
+
+pip freeze
+
+Explanation: Write the current list of installed packages to a requirements file, which can be used by pip to
+reinstall the same set of packages
+
+pip uninstall Django
+
+Explanation: The command above uninstalls the installed package specified being Django.
+
+pip show Django
+
+Explanation: The command above shows the information regarding the installed package.
+In our case Django is no longer installed so the package is not found. 
