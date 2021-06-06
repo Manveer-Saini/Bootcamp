@@ -1,0 +1,371 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    color: #333333;
+    padding: 5px;
+}
+
+#wrapper {
+    width: 1250px;
+    height: 888px;
+    background-color: white;
+    padding: 5px;
+}
+
+#horizontal-divide-top {
+    width: 1200px;
+    border-style: none;
+    height: 1px;
+    background-color: #772d21;
+}
+
+#quick-links {
+    width: 306px;
+    height: 30px;
+    display: inline-flex;
+    margin-left: 293px;
+}
+
+#shop-quick-link {
+    width: 80px;
+    height: 30px;
+    border-bottom: solid #cecece 2px;
+    border-left: solid #cecece 2px;
+    border-radius: 2px;
+    display: flex;
+    flex: 1.5;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#rewards-quick-link {
+    width: 80px;
+    height: 30px;
+    border-bottom: solid #cecece 2px;
+    border-right: solid #cecece 2px;
+    border-left: solid #cecece 2px;
+    border-radius: 2px;
+    flex: 2.5;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#my-list-quick-link {
+    width: 80px;
+    height: 30px;
+    border-bottom: solid #cecece 2px;
+    border-right: solid #cecece 2px;
+    border-radius: 2px;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#red-truck-icon {
+    width: 25px;
+    height: 20px;
+    padding: 5px;
+}
+
+#shop-link-text{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+#box-icon{
+    width: 25px;
+    height: 20px;
+    padding: 5px;
+}
+
+#rewards-link-text{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#list-icon{
+    width: 25px;
+    height: 20px;
+    padding: 5px;
+}
+
+#my-list-link-text{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#safeway-symbol {
+    width: 200px;
+    height: 50px;
+    margin-left: 52px;
+    display: inline-block;
+}
+
+#location {
+    width: 252px;
+    height: 50px;
+    display: inline-block;
+    margin-left: 46px;
+}
+
+#store-text {
+    color: #5f5e6b;
+    font-weight: 600;
+    font-size: 11pt;
+}
+
+#store-img{
+    width: 25px;
+    height: 20px;
+}
+
+.link-locator{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#safeway-locator{
+    display: inline-block;
+}
+
+#profile-w-search {
+    width: 300px;
+    height: 50px;
+    display: inline-block;
+    margin-left: 315px;
+}
+
+#greeting {
+    color: black;
+    font-size: 11pt;
+    margin-left: 93px;
+    margin-top: 5px;
+}
+
+#profile-img {
+    width: 20px;
+    height: 20px;
+    margin-left: 39px;
+}
+
+.log-in{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input{
+    margin-top: 5px;
+    padding-right: 20px;
+}
+
+#navbar {
+    width: 1200px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#box-1 {
+    height: 30px;
+    background-color: #e4161f;
+    width: 200px;
+}
+
+#box-7 {
+    height: 30px;
+    background-color: #e4161f;
+    width: 275px;
+}
+
+.nav-box {
+    height: 30px;
+    background-color: #e4161f;
+    width: 143px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#question-text {
+    color: #655a50;
+    font-size: 24pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 372px;
+    margin-bottom: 10px;
+}
+
+#container-options {
+    width: 1100px;
+    height: 285px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+.in-store {
+    width: 207px;
+    height: 225px;
+    border: solid #dcdcdc 2px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.option-images {
+    width: 40px;
+    height: 35px;
+    margin-left: 69px;
+}
+
+#option-images-go {
+    width: 45px;
+    height: 35px;
+    margin-left: 69px;
+}
+
+#option-images-rush {
+    width: 55px;
+    height: 35px;
+    margin-left: 69px;
+}
+
+.option-link {
+    color: #4b4a4b;
+    font-size: 16pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    display: block;
+    margin-left: 48px;
+    margin-bottom: 16px;
+}
+
+#option-link-up {
+    color: #4b4a4b;
+    font-size: 16pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    display: block;
+    margin-left: 19px;
+    margin-bottom: 16px;
+}
+
+#option-link-rush {
+    color: #4b4a4b;
+    font-size: 16pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    display: block;
+    margin-left: 34px;
+    margin-bottom: 16px;
+}
+
+#in-store-text {
+    color: #50494b;
+    font-size: 8pt;
+}
+
+.special-deals-text {
+    color: #4b4a4b;
+    font-size: 9pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.delivery-text {
+    color: #50494b;
+    font-size: 8pt;
+}
+
+.red-deals{
+    color: #e4161f;
+    font-size: 10pt;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.offer-details {
+    color: #4b4a4b;
+    font-size: 8pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+}
+
+#ads {
+    width: 1100px;
+    height: 395px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+#one-img {
+    width: 700px;
+    height: 394px;
+}
+
+#two-ads {
+    width: 350px;
+    height: 381px;
+    display: flex;
+    flex-direction: column;
+    border: solid #a3a3a3 2px;
+    border-radius: 3px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+#view-button {
+    color: white;
+    font-weight: 900;
+    font-size: 20pt;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#button-backgrd {
+    background-color: #e41620;
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    margin-left: 28px;
+}
+
+#weekly-ad {
+    font-size: 30pt;
+    margin-left: 16px;
+}
+
+#horizontal-divide-bottom {
+    width: 1200px;
+    border-style: none;
+    height: 2px;
+    background-color: #772d21;
+}
