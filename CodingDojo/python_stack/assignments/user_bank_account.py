@@ -20,7 +20,7 @@ class BankAccount:
         return self
 
     def yield_interest(self):
-        self.balance *= self.interest_rate
+        self.balance *= (self.interest_rate + 1)
         return self
 
 
@@ -35,27 +35,27 @@ class User:
     def makeDeposit(self, accountType, amount):
         if(accountType == "Wells Fargo"):
             self.wellsFargo.deposit(amount)
-        if(accountType == "Chase"):
+        elif(accountType == "Chase"):
             self.chase.deposit(amount)
-        if(accountType == "Comercia"):
+        else:
             self.comercia.deposit(amount)    
         return self
 
     def makeWithdrawal(self, accountType, amount):
         if(accountType == "Wells Fargo"):
             self.wellsFargo.withdraw(amount)
-        if(accountType == "Chase"):
+        elif(accountType == "Chase"):
             self.chase.withdraw(amount)
-        if(accountType == "Comercia"):
+        else:
             self.comercia.withdraw(amount)    
         return self
     
     def displayUserBalance(self, accountType):
         if(accountType == "Wells Fargo"):
             self.wellsFargo.display_account_info()
-        if(accountType == "Chase"):
+        elif(accountType == "Chase"):
             self.chase.display_account_info()
-        if(accountType == "Comercia"):
+        else:
             self.comercia.display_account_info()    
         return self
     
@@ -68,3 +68,15 @@ matthew = User("Matthew Le", "matthew@gmail.com")
 nathan = User("Nathan", "nathan@gmail.com")
 
 nathan.makeDeposit("Chase", 5000000).displayUserBalance("Chase").makeDeposit("Wells Fargo", 2000).displayUserBalance("Wells Fargo")
+nathan.displayUserBalance("Chase")
+
+class Saving(BankAccount):
+    def display_account_info(self):
+        print(f"Your savings account Balance: ${self.balance}")
+        super().display_account_info()
+
+savingsAccount = Saving()
+someBankAccount = BankAccount()
+
+savingsAccount.display_account_info()
+someBankAccount.display_account_info()

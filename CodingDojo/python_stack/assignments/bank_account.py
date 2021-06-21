@@ -20,7 +20,7 @@ class BankAccount:
         return self
 
     def yield_interest(self):
-        self.balance *= self.interest_rate
+        self.balance *= (self.interest_rate + 1)
         return self
 
 chase = BankAccount(.2, 30000000)
