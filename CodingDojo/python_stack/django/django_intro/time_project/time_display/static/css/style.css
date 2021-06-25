@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#timeDisplay{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1{
+    border: solid black 2px;
+}
+
+h3{
+    border: solid black 2px;
+}
