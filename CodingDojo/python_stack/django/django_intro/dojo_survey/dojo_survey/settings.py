@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'random_word',
     'survey_app',
     'django.contrib.admin',
     'django.contrib.auth',
