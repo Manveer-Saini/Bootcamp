@@ -1,0 +1,45 @@
+Dojos.objects.create(name = "Taco Shack", city = "San Jose", state = "Ca
+   ...: lifornia")
+
+Dojos.objects.create(name = "Chorizo House", city = "Austin", state = "T
+   ...: exas")
+Dojos.objects.create(name = "Taekwonyum", city = "Montgomery", state = "
+   ...: Alambama")
+Dojos.objects.all.delete()
+Dojos.objects.get(id=2).delete()
+Dojos.objects.get(id=3).delete()
+Dojos.objects.all()
+Dojos.objects.all()
+ Dojos.objects.create(name = "Taco Shack 2", city = "San Jose", state =
+    ...: "California")
+Dojos.objects.create(name = "Chorizo House 2", city = "Austin", state =
+    ...:  "Texas")
+Dojos.objects.create(name = "Taekwonyum 2", city = "Montgomery", state
+    ...: = "Alambama")
+Ninjas.objects.create(first_name = "Manveer", last_name = "Saini", dojo
+    ...:  = Dojos.objects.get(id=4))
+ Ninjas.objects.create(first_name = "Austin", last_name = "Merrit", dojo
+    ...:  = Dojos.objects.get(id=4))
+Ninjas.objects.create(first_name = "Devon", last_name = "Larrat", dojo
+    ...: = Dojos.objects.get(id=4))
+Ninjas.objects.create(first_name = "Taylor", last_name = "Ramirez", doj
+    ...: o = Dojos.objects.get(id=5))
+Ninjas.objects.create(first_name = "Taylor", last_name = "Fancher", doj
+    ...: o = Dojos.objects.get(id=5))
+Ninjas.objects.create(first_name = "Taylor", last_name = "Gang", dojo =
+    ...:  Dojos.objects.get(id=5))
+Ninjas.objects.create(first_name = "Matthew", last_name = "Le", dojo =
+    ...: Dojos.objects.get(id=6))
+Ninjas.objects.create(first_name = "Jordan", last_name = "Samsel", dojo
+    ...:  = Dojos.objects.get(id=6))
+Ninjas.objects.create(first_name = "Tiana", last_name = "Iono", dojo =
+    ...: Dojos.objects.get(id=6))
+Ninjas.objects.create(first_name = "Siripa", last_name = "Iono", dojo =
+    ...:  Dojos.objects.get(id=6))
+Ninjas.objects.filter(dojo = Dojos.objects.get(id=4))
+Ninjas.objects.filter(dojo = Dojos.objects.first())
+Ninjas.objects.filter(dojo = Dojos.objects.last())
+Ninjas.objects.last().dojo
+Dojos.objects.create(name = "Pancake House", city = "Alameda", state = "
+   ...: CA")
+
