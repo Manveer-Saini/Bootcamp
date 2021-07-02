@@ -1,0 +1,19 @@
+Users.objects.create(first_name="Manveer", last_name="Saini", email_address="zolvly@gmail.com", age="26")
+
+Users.objects.create(first_name="Manveer", last_name="Saini", email_address="zolvly@gmail.com", age="26")
+
+Users.objects.all()
+
+Users.objects.last()
+
+Users.objects.first()
+
+Users.objects.get(id=3).last_name="Pancakes"
+
+Users.objects.get(id=2).delete()
+
+Users.objects.all()
+
+Users.objects.order_by("first_name")
+
+Users.objects.order_by("-first_name")
