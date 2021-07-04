@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h3>All the Users</h3>
+
+    <Table>
+        <thead> 
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+    </thead>
+
+        <tbody>
+            {% for user in all_users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>{{ user.email_address }}</td>
+                <td>{{ user.age }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </Table>
+
+
+
+    <form action="/usersProcess" method="POST">
+        {% csrf_token %}
+        <label for="first_name" class="the_label">First Name:</label>
+        <input type="text" class="the_input" name="first_name" id="first_name">
+        
+        <label for="last_name" class="the_label">Last Name:</label>
+        <input type="text" class="the_input" name="last_name" id="last_name">
+
+        <label for="email_address" class="the_label">Email:</label>
+        <input type="text" class="the_input" name="email_address" id="email_address">
+
+        <label for="age" class="the_label">Age:</label>
+        <input type="text" class="the_input" name="age" id="age">
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
