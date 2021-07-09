@@ -1,0 +1,34 @@
+Book.objects.create(title = "C Sharp", desc = "For them video game")
+Book.objects.create(title = "Java", desc = "For them Android Apps")
+Book.objects.create(title = "Python", desc = "For the Machine Learning")
+Book.objects.create(title = "PHP", desc = "For the Website stuff")
+Book.objects.create(title = "Ruby", desc = "For the Ruby on Rails")
+Author.objects.create(firstName = "Jane", lastName = "Austen")
+Author.objects.create(firstName = "Emily", lastName = "Dickinson")
+Author.objects.create(firstName = "Fyodor", lastName = "Dostoevksy")
+Author.objects.create(firstName = "William", lastName = "Shakespeare")
+Author.objects.create(firstName = "Lau", lastName = "Tzu")
+Book.objects.filter(first_name = "C Sharp")
+Book.objects.get(title = "C Sharp")
+Book.objects.get(title = "C Sharp").title = "C#"
+Author.objects.get(id=4).firstName = "Bill"
+Author.objects.first().add(Book.objects.get(id=1))
+Author.objects.first().books.add(Book.objects.get(id=1), Book.objects.ge
+   ...: t(id=2))
+Author.objects.get(id=2).book.add(Book.objects.get(id=1), Book.objects.
+    ...: get(id=2), Book.objects.get(id=3))
+Author.objects.get(id=3).book.add(Book.objects.get(id=1), Book.objects.
+    ...: get(id=2), Book.objects.get(id=3), Book.objects.get(id=4))
+Author.objects.get(id=4).book.add(Book.objects.all())
+Author.objects.get(id=4).book.add(Book.objects.get(id=1), Book.objects.
+    ...: get(id=2), Book.objects.get(id=3), Book.objects.get(id=4), Book.objects
+    ...: .get(id=5))
+Book.objects.get(id=3).authors.all()
+Book.objects.get(id=3).authors.remove(Book.objects.get(id=3).authors.fi
+    ...: rst())
+Book.objects.get(id=3).authors.all()
+ Book.objects.get(id=2).authors.add(Author.objects.last())
+Book.objects.get(id=2).authors.all()
+Author.objects.get(id=3).book.all()
+ Book.objects.get(id=5).authors.all()
+
