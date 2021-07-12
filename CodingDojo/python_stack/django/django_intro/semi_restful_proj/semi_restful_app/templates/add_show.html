@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+</head>
+
+<body>
+    <h3>Add a new TV Show</h3>
+
+    <form action="/create" method="POST">
+        {% csrf_token %}
+        <label for="title" class="the_label">Title:</label>
+        <input type="text" class="the_input" name="title" id="title">
+
+        <label for="network" class="the_label">Network:</label>
+        <input type="text" class="the_input" name="network" id="network">
+
+        <label for="release_date" class="the_label">Network:</label>
+        <input type="date" class="the_input" name="release_date" id="release_date">
+
+        <label for="description" class="the_label">Description:</label>
+        <input type="text" class="the_input" name="description" id="description">
+
+        <button class="btn btn-primary">Add</button>
+    </form>
+</body>
+
+</html>

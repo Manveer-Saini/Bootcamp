@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3>TV Show {{theShow.id}}</h3>
+
+    <p>Title {{theShow.title}}</p>
+    <p>Network {{theShow.network}}</p>
+    <p>Release Date: {{theShow.releaseDate}}</p>
+    <p>Description: {{theShow.description}}</p>
+    <p>Last Updated: {{theShow.update_at}}</p>
+
+    <a href="http://localhost:8000/shows/{{theShow.id}}/edit">Edit</a>
+    <a href="http://localhost:8000/shows/{{theShow.id}}/destroy">Delete</a>
+    <a href="http://localhost:8000/shows">Go Back</a>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Edit Show {{theShow.id}}</h3>
+
+    <form action="/shows/{{theShow.id}}/update" method="POST">
+        {% csrf_token %}
+        <label for="title" class="the_label">Title:</label>
+        <input type="text" class="the_input" name="title" id="title">
+        
+        <label for="network" class="the_label">Network:</label>
+        <input type="text" class="the_input" name="network" id="network">
+
+        <label for="release_date" class="the_label">Network:</label>
+        <input type="date" class="the_input" name="release_date" id="release_date">
+
+        <label for="description" class="the_label">Description:</label>
+        <input type="text" class="the_input" name="description" id="description">
+
+        <button class="btn btn-primary">Update</button>
+    </form>
+    <a href="http://localhost:8000/shows/{{theShow.id}}">Go to Show</a>
+</body>
+</html>
