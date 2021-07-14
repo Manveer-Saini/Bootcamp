@@ -1,6 +1,7 @@
 # from re import M
 # import re
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Show
 
 
@@ -10,11 +11,20 @@ def index(request):
 
 def createShow(request):
     if request.method == "POST":
-        Show.objects.create(title=request.POST['title'],
+        errors = Show.objects.basic_validator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+        # redirect the user back to the form to fix the errors
+            return redirect('/shows/new')
+        else:
+            Show.objects.create(title=request.POST['title'],
                             network=request.POST['network'],
                             releaseDate=request.POST['release_date'],
                             description=request.POST['description'])
-        return redirect(f'/shows/{Show.objects.last().id}')
+            messages.success(request, "Show successfully created")
+            # redirect to a success route
+            return redirect(f'/shows/{Show.objects.last().id}')
 
 
 def viewShow(request, my_val):
@@ -47,13 +57,21 @@ def editShow(request, my_val):
 
 def updateShow(request, my_val):
     if request.method == "POST":
-        updateObj = Show.objects.get(id=my_val)
-        updateObj.title = request.POST['title']
-        updateObj.network = request.POST['network']
-        updateObj.releaseDate = request.POST['release_date']
-        updateObj.description = request.POST['description']
-        updateObj.save()
-        return redirect(f'/shows/{my_val}')
+        errors = Show.objects.basic_validator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+        # redirect the user back to the form to fix the errors
+            return redirect('/shows/new')
+        else:
+            updateObj = Show.objects.get(id=my_val)
+            updateObj.title = request.POST['title']
+            updateObj.network = request.POST['network']
+            updateObj.releaseDate = request.POST['release_date']
+            updateObj.description = request.POST['description']
+            updateObj.save()
+            messages.success(request, "Show successfully created")
+            return redirect(f'/shows/{my_val}')
 
 
 def deleteShow(request, my_val):
