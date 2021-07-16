@@ -18,10 +18,7 @@ def createShow(request):
         # redirect the user back to the form to fix the errors
             return redirect('/shows/new')
         else:
-            Show.objects.create(title=request.POST['title'],
-                            network=request.POST['network'],
-                            releaseDate=request.POST['release_date'],
-                            description=request.POST['description'])
+            Show.objects.create(title=request.POST['title'], network=request.POST['network'], releaseDate=request.POST['release_date'], description=request.POST['description'])
             messages.success(request, "Show successfully created")
             # redirect to a success route
             return redirect(f'/shows/{Show.objects.last().id}')
