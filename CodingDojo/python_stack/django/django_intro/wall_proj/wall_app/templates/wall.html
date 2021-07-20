@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="theHeader">
+        <h3>CodingDojo Wall</h3>
+        <h4>Welcome {{theUser.firstName}}</h4>
+        <a href="http://localhost:8000/logout">Logout</a>
+    </div>
+<!-- Error messages in form if any exist -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+<!-- User logged in can post a message here -->
+    <h3>Post a Message</h3>
+    <form action="/messages" method="POST">
+        {% csrf_token %}
+        <textarea name="message_box" id="message_box" cols="30" rows="10"></textarea>
+        <button class="btn btn-primary">Post a message</button>
+    </form>
+
+<!-- User logged in can post a comment to a message here -->
+    {% for message in allMessages %}
+    <p>{{message.user.firstName}} {{message.user.lastName}} - {{message.created_at}}</p>
+    <p>{{message.message}}</p>
+    {% if message.user.id == theUser.id %}
+        <a href="http://localhost:8000/messages/{{message.id}}/delete">Delete</a>
+        <a href="http://localhost:8000/messages/{{message.id}}/edit">Edit</a>
+    {% endif %}
+        {% for comment in message.comments.all %}
+    <p>{{comment.user.firstName}} {{comment.user.lastName}} - {{comment.created_at}}</p>
+    <p>{{comment.comment}}</p>
+    {% endfor %}
+    <form action="/messages/{{message.id}}/comments" method="POST">
+        {% csrf_token %}
+        <textarea name="comment" id="comment"></textarea>
+        <button class="btn btn-primary">Post a comment</button>
+    </form>
+    {% endfor %}
+
+</body>
+
+</html>
