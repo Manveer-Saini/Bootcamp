@@ -7,7 +7,7 @@ console.log(otherRandomCar)
 
 Problem 1:
 Tesla
-Honda
+Mercedes
 
 const employee = {
     name: 'Elon',
@@ -20,7 +20,7 @@ console.log(name);
 console.log(otherName);
 
 Problem 2:
-undefined
+"ReferenceError: name is not defined"
 
 const person = {
     name: 'Phil Smith',
@@ -46,7 +46,8 @@ console.log(first == second);
 console.log(first == third);
 
 Problem 4:
-
+False
+True
 
 const lastTest = {
     key: 'value',
@@ -64,4 +65,5 @@ console.log(willThisWork);
 Problem 5:
 value
 [1, 5, 1, 8, 3, 3]
-3
+1
+5
