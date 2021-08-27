@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div id="theHeader">
+        <h4>Hello {{theUser.firstName}}!</h4>
+        <button><a href="http://localhost:8000/logout">Logout</a></button>
+        <button><a href="http://localhost:8000/wishes/new">Make a Wish</a></button>
+    </div>
+    <!-- Error messages in form if any exist -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h3>Your wish list:</h3>
+    <!-- Top Table to display ungranted wishes in logged in user's wishlist -->
+    <Table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for wish in allWishes %}
+            {% if wish.user.id == theUser.id and not wish.grantedwish.isGranted %}
+            <tr>
+                <th>{{wish.item}}</th>
+                <th>{{wish.created_at}}</th>
+                <th>
+                    <button><a href="http://localhost:8000/wishes/delete/{{wish.id}}">Delete</a></button>
+                    <button><a href="http://localhost:8000/wishes/edit/{{wish.id}}">Edit</a></button>
+                    <button><a href="http://localhost:8000/wishes/granted/{{wish.id}}">Granted!</a></button>
+                </th>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </Table>
+
+    <!-- Granted wishes for all users -->
+    <h3>Granted wishes:</h3>
+
+    <Table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Wisher</th>
+                <th>Date Added</th>
+                <th>Date Granted</th>
+                <!-- <th>Actions</th> -->
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for wish in allWishes %}
+            {% if wish.grantedwish.isGranted %}
+            <tr>
+                <th>{{wish.item}}</th>
+                <th>{{wish.user.firstName}}</th>
+                <th>{{wish.created_at}}</th>
+                <th>{{wish.grantedwish.created_at}}</th>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </Table>
+
+</body>
+
+</html>

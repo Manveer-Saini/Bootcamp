@@ -32,10 +32,37 @@ class UserManager(models.Manager):
             errors['password'] = "Password requires at least 8 characters"
         return errors
 
+
+class WishManager(models.Manager):
+    def validator(self, postData):
+        errors = {}
+        if (len(postData['item']) < 3):
+            errors['item'] = "Item needs to be atleast 3 characters!"
+        if (len(postData['description']) < 3):
+            errors['description'] = "Description needs to be atleast 3 characters!"
+        return errors
+    
+
 class User(models.Model):
     firstName = models.CharField(max_length=255)
     lastName = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     passwordHash = models.CharField(max_length=255)
     objects = UserManager()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 # Create your models here.
+
+class Wish(models.Model):
+    item = models.CharField(max_length=255)
+    description = models.TextField()
+    user = models.ForeignKey(User, related_name="wishes", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = WishManager()
+
+class GrantedWish(models.Model):
+    isGranted = models.BooleanField()
+    wish = models.OneToOneField(Wish, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

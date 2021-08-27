@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <h1>Hello {{theUser.firstName}}! Let's edit your wish!</h1>
+    <button><a href="http://localhost:8000/logout">Logout</a></button>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="/wishes/update/{{theWish.id}}" method="POST">
+        {% csrf_token %}
+        <label for="item" class="the_label">I wish for:</label>
+        <input type="text" class="the_input" name="item" id="item">
+
+        <label for="description" class="the_label">Description:</label>
+        <input type="text" class="the_input" name="description" id="description">
+
+        <button class="btn btn-primary">Edit</button>
+    </form>
+    <button><a href="http://localhost:8000/wishes">Cancel</a></button>
+</body>
+
+</html>
