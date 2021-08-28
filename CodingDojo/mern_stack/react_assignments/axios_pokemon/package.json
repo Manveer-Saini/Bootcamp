@@ -1,5 +1,5 @@
 {
-  "name": "pokemon_list",
+  "name": "axios_pokemon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
