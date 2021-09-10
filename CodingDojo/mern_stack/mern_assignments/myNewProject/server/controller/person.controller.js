@@ -15,3 +15,14 @@ module.exports.createPerson = (request, response) => {
         .catch(err => res.json({message: "Something went wrong", error: err}));
 }
 
+module.exports.getAllPeople = (request, response) => {
+    Person.find({})
+        .then(persons => response.json(persons))
+        .catch(err => response.json(err))
+}
+
+module.exports.getPerson = (request, response) => {
+    Person.findOne({_id:request.params.id})
+        .then(person => response.json(person))
+        .catch(err => response.json(err))
+}
