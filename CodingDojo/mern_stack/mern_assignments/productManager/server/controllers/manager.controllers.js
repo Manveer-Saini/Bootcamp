@@ -25,3 +25,15 @@ module.exports.getProduct = (request, response) => {
         .then(product => response.json(product))
         .catch(err => response.json(err))
 }
+
+module.exports.deletePerson = (request, response) => {
+    Product.deleteOne({_id: request.params.id})
+        .then(deletedProduct => response.json(deletedProduct))
+        .catch(err => response.json(err))
+}
+
+module.exports.updateProduct = (request, response) => {
+    Product.findOneAndUpdate({id:request.params.id}, request.body, {new:true})
+        .then(product => response.json(product))
+        .catch(err => response.json(err))
+}
