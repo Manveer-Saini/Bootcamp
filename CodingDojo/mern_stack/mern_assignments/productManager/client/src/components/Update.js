@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from 'axios';
 
 const Update = (props) => {
-    const [product, setProduct] = useState({});
+    
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -11,9 +11,7 @@ const Update = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/products/" + props.id)
             .then(res => {
-            //     setProduct({
-            //     ...res.data
-            // });
+            
                 setTitle(res.data.title);
                 setPrice(res.data.price);
                 setDescription(res.data.description)

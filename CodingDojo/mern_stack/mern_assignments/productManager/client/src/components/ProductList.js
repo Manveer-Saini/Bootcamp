@@ -1,19 +1,20 @@
 import React from "react";
 import {Link} from '@reach/router'
-import axios from "axios";
+import Delete from "./Delete";
 
 const ProductList = (props) => {
-    const { removeFromDom } = props;
-    const deleteProduct = (productId) => {
-        axios.delete('http://localhost:8000/api/products/' + productId)
-            .then(res => {
-                removeFromDom(productId)
-            })
+    const {products, setProducts} = props;
+    
+
+    const removeFromDom = (productId) => {
+        let newList = products.filter((product) => product._id !== productId);
+        setProducts(newList);
     }
+
     return(
         <div>
             {
-                props.product.map((product, idx) => {
+                products.map((product, idx) => {
                     return <p key={idx}>
                         <Link to={"/products/" + product._id} >{product.title}</Link>
                         |
@@ -21,9 +22,7 @@ const ProductList = (props) => {
                             Edit
                         </Link>
                         |
-                        <button onClick={(e)=>{deleteProduct(product._id)}}>
-                            Delete
-                        </button>
+                        <Delete productId={product._id} removeFromDom={removeFromDom} />
                     </p>
                 })
             }
