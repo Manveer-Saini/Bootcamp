@@ -21,7 +21,7 @@ module.exports.getAllProducts = (request, response) => {
 }
 
 module.exports.getProduct = (request, response) => {
-    Product.findOne({id:request.params.id})
+    Product.findOne({_id:request.params.id})
         .then(product => response.json(product))
         .catch(err => response.json(err))
 }
@@ -33,7 +33,7 @@ module.exports.deletePerson = (request, response) => {
 }
 
 module.exports.updateProduct = (request, response) => {
-    Product.findOneAndUpdate({id:request.params.id}, request.body, {new:true})
+    Product.findOneAndUpdate({_id:request.params.id}, request.body, {new:true})
         .then(product => response.json(product))
         .catch(err => response.json(err))
 }
