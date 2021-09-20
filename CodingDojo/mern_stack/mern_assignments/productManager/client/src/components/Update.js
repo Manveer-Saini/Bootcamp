@@ -36,8 +36,7 @@ const Update = (props) => {
         axios.put("http://localhost:8000/api/products/" + id, updatedProduct)
             .then(res => {
                 console.log(res)
-                console.log("Here is the product in update: ", res.data);
-                navigate("/products")
+                navigate("/")
             })
     }
 
@@ -45,25 +44,7 @@ const Update = (props) => {
         // Call form by passing original field values for product and updateProduct Callback function.
         <div>
             <h1>Update a Person</h1>
-            {/* {console.log(product.title)} */}
             {loaded && <ProductForm product={updatedProduct} setProduct={setUpdatedProduct} onSubmitProp={updateProduct} />}
-            {/* <form onSubmit={updateProduct}>
-                
-                <div>
-                    <label>Title:</label>
-                    <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                </div>
-                <div>
-                    <label>Price:</label>
-                    <input type="text" name="price" value={price} onChange={(e) => setPrice(e.target.value)}/>
-                </div>
-                <div>
-                    <label>Description:</label>
-                    <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
-                </div>
-                
-                <input type="submit"/>
-            </form> */}
         </div>
     )
 }

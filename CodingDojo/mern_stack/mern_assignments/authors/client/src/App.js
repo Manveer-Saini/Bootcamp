@@ -4,15 +4,17 @@ import Detail from './views/Detail';
 import {Router} from '@reach/router'
 import Update from './components/Update';
 import Delete from './components/Delete';
+import Create from './components/Create';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Main default/>
-        <Detail path="products/:id"/>
-        <Update path="products/:id/edit" />
-        <Delete path="products/:id/delete" />
+        <Create path="/new"/>
+        <Detail path="/authors/:id"/>
+        <Update path="/authors/:id/edit" />
+        <Delete path="/authors/:id/delete" />
       </Router>
     </div>
   );

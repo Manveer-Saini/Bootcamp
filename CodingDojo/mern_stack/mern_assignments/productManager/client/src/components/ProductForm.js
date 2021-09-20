@@ -2,11 +2,7 @@ import React, {useState} from 'react';
 
 
 const ProductForm = (props) => {
-    // const { initialTitle, initialPrice, initialDescription, onSubmitProp } = props;
     const {product, setProduct, onSubmitProp} = props;
-    // const [title, setTitle] = useState(initialTitle);
-    // const [price, setPrice] = useState(initialPrice);
-    // const [description, setDescription] = useState(initialDescription);
 
     // Applies the input for each field in product object.
     const inputBuilder = (e) => {
@@ -14,22 +10,6 @@ const ProductForm = (props) => {
         newProductObject[e.target.name] = e.target.value;
         setProduct(newProductObject);
     }
-    // const submitHandler = (e) => {
-    //     // prevent default behavior of the submit
-    //     e.preventDefault();
-
-    //     // axios.post('http://localhost:8000/api/products', {
-    //     //     title,
-    //     //     price,
-    //     //     description
-    //     // })
-    //     //     .then((res) => {
-    //     //         console.log("This is in product form.")
-    //     //         console.log(res)
-    //     //     })
-    //     //     .catch((err) => {console.log(err)})
-    //     onSubmitProp({title, price, description});
-    // }
 
     return (
         <form onSubmit={onSubmitProp}>

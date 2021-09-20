@@ -3,14 +3,14 @@ import axios from 'axios';
 import {navigate } from "@reach/router";
 
 const Delete = (props) => {
-    const {productId, removeFromDom} = props;
+    const {authorId, removeFromDom} = props;
 
-    const deleteProduct = (e) => {
+    const deleteAuthor = (e) => {
         // Call to the backend api to use Mongoose to delete from mongoDB
-        axios.delete('http://localhost:8000/api/products/' + productId)
+        axios.delete('http://localhost:8000/api/authors/' + authorId)
             .then(res => {
                 if(removeFromDom){
-                    removeFromDom(productId);
+                    removeFromDom(authorId);
                 }
                 else{
                     console.log(res.data);
@@ -23,7 +23,7 @@ const Delete = (props) => {
     }
 
     return (
-        <button onClick={deleteProduct}>
+        <button onClick={deleteAuthor}>
             Delete
         </button>
     )

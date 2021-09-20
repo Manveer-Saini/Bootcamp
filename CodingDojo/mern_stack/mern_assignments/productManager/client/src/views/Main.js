@@ -39,7 +39,7 @@ const Main = (props) => {
     // }
     return(
         <div>
-            <ProductForm product={theProduct} setProduct={setTheProduct} onSubmitProp={createProduct}/>
+            <ProductForm product={theProduct} setProduct={setTheProduct} onSubmitProp={createProduct} />
             <hr/>
             {loaded && <ProductList products={product} setProducts={setProduct}/>}
         </div>
