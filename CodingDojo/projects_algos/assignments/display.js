@@ -38,6 +38,20 @@ class SLL{
         }  
         return this.head.data;
     }
+
+    display(){
+        let curr = this.head;
+        let myList = "";
+        if(!curr){
+            return curr;
+        }
+
+        while(curr != null){
+            myList += curr.data;
+            curr = curr.next; 
+        }
+        return myList;
+    }
 }
 
 let testList = new SLL();
@@ -46,11 +60,5 @@ testList.addFront(2);
 testList.addFront(4); 
 testList.addFront(3);
 
-testList.removeFront();
-// console.log(testList.front());
-
-let curr = testList.addFront(5).head;
-while(curr != null){
-    console.log(curr.data);
-    curr = curr.next;
-}
+let someString = testList.display();
+console.log(someString);
