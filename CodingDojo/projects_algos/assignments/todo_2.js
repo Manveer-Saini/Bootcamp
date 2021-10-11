@@ -48,12 +48,12 @@ function reverseWithIndices(arr, start, end){
 
 let rotateArrayRight = [1, 2, 3, 4, 5];
 console.log("Rotate to the right", rotateArrayRight);
-rotate(rotateArrayRight, 2);
+rotate(rotateArrayRight, 3);
 console.log(rotateArrayRight);
 
-let rotateArrayLeft = [1, 3, 5, 7, 9, 11];
+let rotateArrayLeft = [1, 2, 3, 4, 5];
 console.log("Rotate to the left", rotateArrayLeft);
-rotate(rotateArrayLeft, -2);
+rotate(rotateArrayLeft, -3);
 console.log(rotateArrayLeft);
 
 function filterRange(arr, min, max){
